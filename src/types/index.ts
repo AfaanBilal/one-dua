@@ -8,3 +8,9 @@
 export type WithChildren = {
     children: React.ReactNode;
 };
+
+export type Dua = {
+    id: string;
+    text: string;
+    audio?: string;
+};

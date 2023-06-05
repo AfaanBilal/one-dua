@@ -22,6 +22,7 @@ export default BigCard;
 
 const styles = StyleSheet.create({
     card: {
+        width: '100%',
         justifyContent: 'center',
         alignItems: 'center',
         paddingHorizontal: SpacingW.s2,
@@ -33,7 +34,7 @@ const styles = StyleSheet.create({
     text: {
         fontSize: FontSize.NORMED,
         color: Colors.DARK,
-        textAlign: 'right',
+        textAlign: 'center',
         fontWeight: 'bold',
     },
 });
