@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import { StyleProp, StyleSheet, Text, TextStyle } from 'react-native'
+import { StyleProp, StyleSheet, Text, TextStyle } from 'react-native';
 import { Fonts } from '../../utils/fonts';
 import type { WithChildren } from '../../types';
 

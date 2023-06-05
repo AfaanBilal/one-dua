@@ -22,7 +22,7 @@ const divFactorFS = isTabPortrait ? 0.75 : 1;
 const fontScale = PixelRatio.getFontScale() / divFactorFS;
 
 export const FontSize = {
-    VERY_BIG: hp('6.5%') / fontScale,
+    BIGGEST: hp('6.5%') / fontScale,
     BIGGER: hp('5%') / fontScale,
     BIG: hp('4%') / fontScale,
     MEDIUM: hp('3%') / fontScale,
@@ -30,7 +30,7 @@ export const FontSize = {
     NORMAL: hp('1.9%') / fontScale,
     SMALL: hp('1.7%') / fontScale,
     SMALLER: hp('1.5%') / fontScale,
-    VERY_SMALL: hp('1.3%') / fontScale,
+    SMALLEST: hp('1.3%') / fontScale,
 };
 
 const hMulFactor = isTabPortrait ? 1 : 1;

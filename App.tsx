@@ -7,11 +7,27 @@
 
 import { useFonts } from 'expo-font';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { Fonts } from './src/utils/fonts';
-import TitleText from './src/components/text/TitleText';
-import AltText from './src/components/text/AltText';
 import { Colors } from './src/utils/colors';
+import { Size, SpacingH } from './src/utils/size';
+import { FontSize } from './src/utils/size';
+import TitleText from './src/components/text/TitleText';
+import BigCard from './src/components/cards/BigCard';
+
+const duas = [
+    'سُبحَانَ اللّهِ وَ بِحَمْدِهِ',
+    'سُبحَانَ اللّهِ الْعَظِيمِ',
+    'سُبْحَانَ ٱللَّٰهِ',
+    'ٱلْحَمْدُ لِلّٰهِ',
+    'لَا إِلَٰهَ إِلَّا ٱللَّٰهُ',
+    'ٱللَّٰهُ أَكْبَرُ',
+    'أَسْتَغْفِرُ اللّٰهَ',
+    'لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِٱللَّٰهِ ٱلْعَلِيِّ ٱلْعَظِيمِ',
+    'بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ',
+    'اللّٰهُمَّ أَنْتَ رَبِّي، لَا إِلٰهَ إِلَّا أَنْتَ، خَلَقْتَنِيْ وَأَنَا عَبْدُكَ، وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ، أَعُوْذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ، أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَىَّ وَأَبُوءُ لَكَ بِذَنْبِيْ، فَاغْفِرْ لِيْ، فَإِنَّهُ لَا يَغْفِرُ الذُّنُوْبَ إِلَّاأَنْتَ',
+    'لَّآ إِلَٰهَ إِلَّآ أَنتَ سُبْحَٰنَكَ إِنِّى كُنتُ مِنَ ٱلظَّٰلِمِينَ',
+];
 
 export default function App() {
     const [fontsLoaded] = useFonts({
@@ -33,19 +49,25 @@ export default function App() {
     return (
         <View style={styles.container}>
             <StatusBar style="auto" />
-            <TitleText style={{ fontSize: 100 }}>OneDua</TitleText>
-            <AltText style={{ fontSize: 100 }}>OneDua</AltText>
-            <Text style={{ fontFamily: Fonts.SourceSansPro, fontSize: 50 }}>OneDua</Text>
-            <Text>Open up App.tsx to start working on your app!</Text>
+            <TitleText style={{ fontSize: FontSize.BIGGER, color: Colors.DARK, textAlign: 'center' }}>One Dua</TitleText>
+
+            <ScrollView contentContainerStyle={styles.cardContainer}>
+                {duas.map((d, i) => <BigCard key={i} dua={d} />)}
+            </ScrollView>
         </View>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
+        paddingTop: Size.adjustedStatusBarHeight,
         flex: 1,
-        backgroundColor: Colors.WHITE,
-        alignItems: 'center',
-        justifyContent: 'center',
+    },
+    cardContainer: {
+        padding: SpacingH.s0,
+        flexDirection: 'row-reverse',
+        justifyContent: 'space-between',
+        flexWrap: 'wrap',
+        gap: SpacingH.s1,
     },
 });
