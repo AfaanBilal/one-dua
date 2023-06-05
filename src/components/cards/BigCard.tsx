@@ -29,7 +29,6 @@ const styles = StyleSheet.create({
         paddingVertical: SpacingH.s2,
         backgroundColor: Colors.SOFT_WHITE,
         borderRadius: SpacingW.s2,
-        gap: SpacingH.s2,
     },
     text: {
         fontSize: FontSize.NORMED,

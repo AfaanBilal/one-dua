@@ -14,6 +14,7 @@ import { Size, SpacingH } from './src/utils/size';
 import { FontSize } from './src/utils/size';
 import TitleText from './src/components/text/TitleText';
 import BigCard from './src/components/cards/BigCard';
+import HighlightCard from './src/components/cards/HighlightCard';
 
 const duas = [
     'بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ',
@@ -53,7 +54,10 @@ export default function App() {
     return (
         <View style={styles.container}>
             <StatusBar style="auto" />
-            <TitleText style={{ fontSize: FontSize.BIGGER, color: Colors.DARK, textAlign: 'center' }}>One Dua</TitleText>
+
+            <TitleText style={{ fontSize: FontSize.BIGGER, color: Colors.DARK, textAlign: 'center', marginBottom: SpacingH.s1 }}>One Dua</TitleText>
+
+            <HighlightCard dua={{ id: 'Bismillah', text: duas[9], ref: 'Quran 1:1', category: 'General' }} />
 
             <ScrollView contentContainerStyle={styles.cardContainer}>
                 {duas.map((d, i) => <BigCard key={i} dua={d} />)}

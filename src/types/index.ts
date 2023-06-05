@@ -12,5 +12,6 @@ export type WithChildren = {
 export type Dua = {
     id: string;
     text: string;
-    audio?: string;
+    ref: string;
+    category: string;
 };
