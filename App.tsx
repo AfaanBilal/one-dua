@@ -15,23 +15,24 @@ import { FontSize } from './src/utils/size';
 import TitleText from './src/components/text/TitleText';
 import BigCard from './src/components/cards/BigCard';
 import HighlightCard from './src/components/cards/HighlightCard';
+import { Dua } from './src/types';
 
-const duas = [
-    'بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ',
-    'سُبحَانَ اللّهِ وَ بِحَمْدِهِ',
-    'سُبحَانَ اللّهِ الْعَظِيمِ',
-    'سُبْحَانَ ٱللَّٰهِ',
-    'ٱلْحَمْدُ لِلّٰهِ',
-    'لَا إِلَٰهَ إِلَّا ٱللَّٰهُ',
-    'ٱللَّٰهُ أَكْبَرُ',
-    'أَسْتَغْفِرُ اللّٰهَ',
-    'لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِٱللَّٰهِ ٱلْعَلِيِّ ٱلْعَظِيمِ',
-    'اللّٰهُمَّ أَنْتَ رَبِّي، لَا إِلٰهَ إِلَّا أَنْتَ، خَلَقْتَنِيْ وَأَنَا عَبْدُكَ، وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ، أَعُوْذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ، أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَىَّ وَأَبُوءُ لَكَ بِذَنْبِيْ، فَاغْفِرْ لِيْ، فَإِنَّهُ لَا يَغْفِرُ الذُّنُوْبَ إِلَّاأَنْتَ',
-    'لَّآ إِلَٰهَ إِلَّآ أَنتَ سُبْحَٰنَكَ إِنِّى كُنتُ مِنَ ٱلظَّٰلِمِينَ',
-    'بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا',
-    'الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ',
-    'إِنَّا ِلِلَّٰهِ وَإِنَّا إِلَيْهِ رَاجِعُونَ',
-    'اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْخُبُثِ وَالْخَبَائِثِ',
+const duas: Dua[] = [
+    { text: 'بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ', id: '1', ref: 'Quran 1:1', category: 'General', },
+    { text: 'سُبحَانَ اللّهِ وَ بِحَمْدِهِ', id: '2', ref: '', category: 'General' },
+    { text: 'سُبحَانَ اللّهِ الْعَظِيمِ', id: '3', ref: '', category: 'General' },
+    { text: 'سُبْحَانَ ٱللَّٰهِ', id: '4', ref: '', category: 'General' },
+    { text: 'ٱلْحَمْدُ لِلّٰهِ', id: '5', ref: '', category: 'General' },
+    { text: 'لَا إِلَٰهَ إِلَّا ٱللَّٰهُ', id: '6', ref: '', category: 'General' },
+    { text: 'ٱللَّٰهُ أَكْبَرُ', id: '7', ref: '', category: 'General' },
+    { text: 'أَسْتَغْفِرُ اللّٰهَ', id: '8', ref: '', category: 'Forgiveness' },
+    { text: 'لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِٱللَّٰهِ ٱلْعَلِيِّ ٱلْعَظِيمِ', id: '9', ref: '', category: 'General' },
+    { text: 'اللّٰهُمَّ أَنْتَ رَبِّي، لَا إِلٰهَ إِلَّا أَنْتَ، خَلَقْتَنِيْ وَأَنَا عَبْدُكَ، وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ، أَعُوْذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ، أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَىَّ وَأَبُوءُ لَكَ بِذَنْبِيْ، فَاغْفِرْ لِيْ، فَإِنَّهُ لَا يَغْفِرُ الذُّنُوْبَ إِلَّاأَنْتَ', id: '10', ref: '', category: 'Forgiveness' },
+    { text: 'لَّآ إِلَٰهَ إِلَّآ أَنتَ سُبْحَٰنَكَ إِنِّى كُنتُ مِنَ ٱلظَّٰلِمِينَ', id: '11', ref: '', category: 'General' },
+    { text: 'بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا', id: '11', ref: '', category: 'Before Sleeping' },
+    { text: 'الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ', id: '12', ref: '', category: 'Waking Up' },
+    { text: 'إِنَّا ِلِلَّٰهِ وَإِنَّا إِلَيْهِ رَاجِعُونَ', id: '13', ref: '', category: 'Bad News' },
+    { text: 'اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْخُبُثِ وَالْخَبَائِثِ', id: '14', ref: '', category: 'Entering Washroom' },
 ];
 
 export default function App() {
@@ -57,7 +58,7 @@ export default function App() {
 
             <TitleText style={{ fontSize: FontSize.BIGGER, color: Colors.DARK, textAlign: 'center', marginBottom: SpacingH.s1 }}>One Dua</TitleText>
 
-            <HighlightCard dua={{ id: 'Bismillah', text: duas[9], ref: 'Quran 1:1', category: 'General' }} />
+            <HighlightCard dua={duas[9]} />
 
             <ScrollView contentContainerStyle={styles.cardContainer}>
                 {duas.map((d, i) => <BigCard key={i} dua={d} />)}
