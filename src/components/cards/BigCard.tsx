@@ -16,8 +16,8 @@ const BigCard: React.FC<{ dua: Dua }> = ({ dua }) => {
         <View style={styles.card}>
             <Text style={styles.title}>{dua.text}</Text>
             <View style={styles.bottomRow}>
-                <Text style={styles.text}>{dua.ref}</Text>
                 <Text style={styles.text}>{dua.category}</Text>
+                <Text style={styles.text}>{dua.ref}</Text>
             </View>
         </View>
     );
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
         paddingBottom: SpacingH.s2,
     },
     text: {
-        fontSize: FontSize.NORMAL,
+        fontSize: FontSize.SMALL,
         color: Colors.DARK,
     },
     bottomRow: {
