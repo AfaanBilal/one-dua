@@ -7,21 +7,27 @@
 
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import Home from '../screens/Home';
 import { Colors } from '../utils/colors';
 import { SpacingH } from '../utils/size';
+import Home from '../screens/Home';
+import Checklists from '../screens/Checklists';
 
 const Tab = createMaterialBottomTabNavigator();
+
+const TabIcon = ({ name, color, focused }: { name: string; color: string; focused: boolean }) => {
+    return <MaterialCommunityIcons name={name} color={color} size={focused ? 30 : 22} style={{ marginTop: focused ? -SpacingH.s0 : 0 }} />;
+};
 
 const BottomTabs: React.FC = () => {
     return (
         <Tab.Navigator
             initialRouteName="Home"
-            barStyle={{ backgroundColor: Colors.SOFT_WHITE, marginBottom: -SpacingH.s4 }}>
-            <Tab.Screen name="Home" component={Home} options={{ tabBarLabel: '', tabBarIcon: ({ color }) => <MaterialCommunityIcons name="home" color={color} size={24} /> }} />
-            <Tab.Screen name="X" component={Home} options={{ tabBarLabel: '', tabBarIcon: ({ color }) => <MaterialCommunityIcons name="book" color={color} size={24} /> }} />
-            <Tab.Screen name="Y" component={Home} options={{ tabBarLabel: '', tabBarIcon: ({ color }) => <MaterialCommunityIcons name="heart" color={color} size={24} /> }} />
-            <Tab.Screen name="Z" component={Home} options={{ tabBarLabel: '', tabBarIcon: ({ color }) => <MaterialCommunityIcons name="account" color={color} size={24} /> }} />
+            shifting={true}
+            barStyle={{ backgroundColor: Colors.SOFT_WHITE, marginBottom: -SpacingH.s2 }}>
+            <Tab.Screen name="Home" component={Home} options={{ tabBarIcon: ({ color, focused }) => <TabIcon name="home" color={color} focused={focused} /> }} />
+            <Tab.Screen name="Checklists" component={Checklists} options={{ tabBarIcon: ({ color, focused }) => <TabIcon name="check-circle" color={color} focused={focused} /> }} />
+            <Tab.Screen name="Favorites" component={Home} options={{ tabBarIcon: ({ color, focused }) => <TabIcon name="heart" color={color} focused={focused} /> }} />
+            <Tab.Screen name="Book" component={Home} options={{ tabBarIcon: ({ color, focused }) => <TabIcon name="book" color={color} focused={focused} /> }} />
         </Tab.Navigator>
     );
 };

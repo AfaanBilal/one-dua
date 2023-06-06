@@ -5,12 +5,10 @@
  * @link   https://afaan.dev
  */
 
-import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { ScrollView, StyleSheet, View } from 'react-native';
-import { Searchbar } from 'react-native-paper';
 import { Colors } from '../utils/colors';
-import { Size, SpacingH, SpacingW } from '../utils/size';
+import { Size, SpacingH } from '../utils/size';
 import { FontSize } from '../utils/size';
 import TitleText from '../components/text/TitleText';
 import BigCard from '../components/cards/BigCard';
@@ -35,20 +33,11 @@ const duas: Dua[] = [
     { text: 'اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْخُبُثِ وَالْخَبَائِثِ', id: '14', ref: '', category: 'Entering washroom' },
 ];
 
-const Home: React.FC = () => {
-    const [search, setSearch] = React.useState('');
-
+const Checklists: React.FC = () => {
     return (
         <View style={styles.container}>
             <StatusBar style="auto" />
-            <TitleText style={{ fontSize: FontSize.BIGGER, color: Colors.DARK, textAlign: 'center' }}>One Dua</TitleText>
-
-            <Searchbar
-                placeholder="Search"
-                onChangeText={(s: string) => setSearch(s)}
-                value={search}
-                style={{ marginHorizontal: SpacingW.s1, marginVertical: SpacingH.s1 }}
-            />
+            <TitleText style={{ fontSize: FontSize.BIGGER, color: Colors.DARK, textAlign: 'center', marginBottom: SpacingH.s1 }}>One Dua</TitleText>
 
             <ScrollView>
                 <HighlightCard dua={duas[9]} />
@@ -61,7 +50,7 @@ const Home: React.FC = () => {
     );
 }
 
-export default Home;
+export default Checklists;
 
 const styles = StyleSheet.create({
     container: {

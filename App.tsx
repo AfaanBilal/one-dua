@@ -8,6 +8,9 @@
 import { useFonts } from 'expo-font';
 import { Fonts } from './src/utils/fonts';
 import { NavigationContainer } from '@react-navigation/native';
+import { AppRegistry } from 'react-native';
+import { PaperProvider } from 'react-native-paper';
+import { expo } from './app.json';
 import BottomTabs from './src/navigation/BottomTabs';
 
 export default function App() {
@@ -29,7 +32,11 @@ export default function App() {
 
     return (
         <NavigationContainer>
-            <BottomTabs />
+            <PaperProvider>
+                <BottomTabs />
+            </PaperProvider>
         </NavigationContainer>
     );
 }
+
+AppRegistry.registerComponent(expo.name, () => App);
