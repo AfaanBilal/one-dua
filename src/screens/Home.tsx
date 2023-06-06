@@ -54,7 +54,9 @@ const Home: React.FC = () => {
                 <HighlightCard dua={duas[9]} />
 
                 <View style={{ flexDirection: 'row', gap: SpacingW.s1, paddingVertical: SpacingH.s1, flexWrap: 'wrap' }}>
-                    {[...new Set(duas.map(d => d.category))].map((c, i) => <Chip key={i} mode='outlined' selected={search === c} onPress={() => setSearch(c)}>{c}</Chip>)}
+                    {[...new Set(duas.map(d => d.category))].map((c, i) =>
+                        <Chip key={i} mode='outlined' selected={search === c} onPress={() => search === c ? setSearch('') : setSearch(c)}>{c}</Chip>
+                    )}
                 </View>
 
                 <View style={styles.cardContainer}>
