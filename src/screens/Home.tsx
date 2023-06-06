@@ -54,7 +54,7 @@ const Home: React.FC = () => {
                 <HighlightCard dua={duas[9]} />
 
                 <View style={styles.cardContainer}>
-                    {duas.map((d, i) => <BigCard key={i} dua={d} />)}
+                    {duas.filter(d => d.category.includes(search)).map((d, i) => <BigCard key={i} dua={d} />)}
                 </View>
             </ScrollView>
         </View>
