@@ -35,8 +35,11 @@ export const duas: Dua[] = [
     { text: 'اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْخُبُثِ وَالْخَبَائِثِ', id: '15', ref: '', category: 'Entering washroom' },
 ];
 
+const categoryList = [...new Set(duas.map(d => d.category))];
+
 const Home: React.FC = () => {
     const [search, setSearch] = React.useState('');
+    const [filter, setFilter] = React.useState<string[]>([...categoryList]);
 
     return (
         <View style={styles.container}>
@@ -54,13 +57,23 @@ const Home: React.FC = () => {
                 <HighlightCard dua={duas[9]} />
 
                 <View style={{ flexDirection: 'row', gap: SpacingW.s1, paddingVertical: SpacingH.s1, flexWrap: 'wrap' }}>
-                    {[...new Set(duas.map(d => d.category))].map((c, i) =>
-                        <Chip key={i} mode='outlined' selected={search === c} onPress={() => search === c ? setSearch('') : setSearch(c)}>{c}</Chip>
+                    {categoryList.map((c, i) =>
+                        <Chip
+                            key={i}
+                            mode='outlined'
+                            selected={filter.includes(c)}
+                            onPress={() => setFilter(filter.includes(c) ? filter.filter(f => f !== c) : [...filter, c])}>
+                            {c}
+                        </Chip>
                     )}
                 </View>
 
                 <View style={styles.cardContainer}>
-                    {duas.filter(d => d.category.includes(search)).map((d, i) => <BigCard key={i} dua={d} />)}
+                    {duas
+                        .filter(d => filter.includes(d.category))
+                        .filter(d => d.category.includes(search))
+                        .map((d, i) => <BigCard key={i} dua={d} />)
+                    }
                 </View>
             </ScrollView>
         </View>
