@@ -12,6 +12,7 @@ import { AppRegistry } from 'react-native';
 import { PaperProvider } from 'react-native-paper';
 import { expo } from './app.json';
 import BottomTabs from './src/navigation/BottomTabs';
+import { theme } from './src/utils/theme';
 
 export default function App() {
     const [fontsLoaded] = useFonts({
@@ -32,7 +33,7 @@ export default function App() {
 
     return (
         <NavigationContainer>
-            <PaperProvider>
+            <PaperProvider theme={theme}>
                 <BottomTabs />
             </PaperProvider>
         </NavigationContainer>
