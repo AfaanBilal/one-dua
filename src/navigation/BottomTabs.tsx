@@ -29,7 +29,6 @@ const BottomTabs: React.FC = () => {
             <Tab.Screen name="Home" component={Home} options={{ tabBarIcon: ({ color, focused }) => <TabIcon name="home" color={color} focused={focused} /> }} />
             <Tab.Screen name="Checklists" component={Checklists} options={{ tabBarIcon: ({ color, focused }) => <TabIcon name="check-circle" color={color} focused={focused} /> }} />
             <Tab.Screen name="Favorites" component={Favorites} options={{ tabBarIcon: ({ color, focused }) => <TabIcon name="heart" color={color} focused={focused} /> }} />
-            <Tab.Screen name="Book" component={Home} options={{ tabBarIcon: ({ color, focused }) => <TabIcon name="book" color={color} focused={focused} /> }} />
         </Tab.Navigator>
     );
 };

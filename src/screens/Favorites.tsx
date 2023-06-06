@@ -9,6 +9,8 @@ import { StatusBar } from 'expo-status-bar';
 import { ScrollView, StyleSheet, View } from 'react-native';
 import { Size, SpacingH } from '../utils/size';
 import ScreenTitle from '../components/ScreenTitle';
+import { duas } from './Home';
+import BigCard from '../components/cards/BigCard';
 
 const Favorites: React.FC = () => {
     return (
@@ -18,7 +20,9 @@ const Favorites: React.FC = () => {
 
             <ScrollView>
                 <View style={styles.cardContainer}>
-
+                    {duas
+                        .map((d, i) => <BigCard key={i} dua={d} />)
+                    }
                 </View>
             </ScrollView>
         </View>
