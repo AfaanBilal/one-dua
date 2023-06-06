@@ -15,3 +15,9 @@ export type Dua = {
     ref: string;
     category: string;
 };
+
+export type Checklist = {
+    id: string;
+    title: string;
+    duas: { dua: Dua, rep: number }[];
+};

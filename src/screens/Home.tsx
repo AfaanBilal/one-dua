@@ -17,7 +17,7 @@ import BigCard from '../components/cards/BigCard';
 import HighlightCard from '../components/cards/HighlightCard';
 import { Dua } from '../types';
 
-const duas: Dua[] = [
+export const duas: Dua[] = [
     { text: 'بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ', id: '1', ref: 'Quran 1:1', category: 'General', },
     { text: 'سُبحَانَ اللّهِ وَ بِحَمْدِهِ', id: '2', ref: '', category: 'General' },
     { text: 'سُبحَانَ اللّهِ الْعَظِيمِ', id: '3', ref: '', category: 'General' },
@@ -29,10 +29,10 @@ const duas: Dua[] = [
     { text: 'لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِٱللَّٰهِ ٱلْعَلِيِّ ٱلْعَظِيمِ', id: '9', ref: '', category: 'General' },
     { text: 'اللّٰهُمَّ أَنْتَ رَبِّي، لَا إِلٰهَ إِلَّا أَنْتَ، خَلَقْتَنِيْ وَأَنَا عَبْدُكَ، وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ، أَعُوْذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ، أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَىَّ وَأَبُوءُ لَكَ بِذَنْبِيْ، فَاغْفِرْ لِيْ، فَإِنَّهُ لَا يَغْفِرُ الذُّنُوْبَ إِلَّاأَنْتَ', id: '10', ref: '', category: 'Forgiveness' },
     { text: 'لَّآ إِلَٰهَ إِلَّآ أَنتَ سُبْحَٰنَكَ إِنِّى كُنتُ مِنَ ٱلظَّٰلِمِينَ', id: '11', ref: '', category: 'General' },
-    { text: 'بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا', id: '11', ref: '', category: 'Before sleeping' },
-    { text: 'الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ', id: '12', ref: '', category: 'Waking up' },
-    { text: 'إِنَّا ِلِلَّٰهِ وَإِنَّا إِلَيْهِ رَاجِعُونَ', id: '13', ref: '', category: 'Bad news' },
-    { text: 'اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْخُبُثِ وَالْخَبَائِثِ', id: '14', ref: '', category: 'Entering washroom' },
+    { text: 'بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا', id: '12', ref: '', category: 'Before sleeping' },
+    { text: 'الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ', id: '13', ref: '', category: 'Waking up' },
+    { text: 'إِنَّا ِلِلَّٰهِ وَإِنَّا إِلَيْهِ رَاجِعُونَ', id: '14', ref: '', category: 'Bad news' },
+    { text: 'اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْخُبُثِ وَالْخَبَائِثِ', id: '15', ref: '', category: 'Entering washroom' },
 ];
 
 const Home: React.FC = () => {
