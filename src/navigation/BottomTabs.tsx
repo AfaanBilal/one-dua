@@ -15,7 +15,7 @@ import Checklists from '../screens/Checklists';
 const Tab = createMaterialBottomTabNavigator();
 
 const TabIcon = ({ name, color, focused }: { name: string; color: string; focused: boolean }) => {
-    return <MaterialCommunityIcons name={name} color={color} size={focused ? 30 : 22} style={{ marginTop: focused ? -SpacingH.s0 : 0 }} />;
+    return <MaterialCommunityIcons name={name} color={color} size={focused ? 30 : 22} style={{ marginTop: focused ? -3 : 0 }} />;
 };
 
 const BottomTabs: React.FC = () => {
