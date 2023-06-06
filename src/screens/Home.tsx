@@ -8,7 +8,7 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { ScrollView, StyleSheet, View } from 'react-native';
-import { Searchbar } from 'react-native-paper';
+import { Chip, Searchbar } from 'react-native-paper';
 import { Colors } from '../utils/colors';
 import { Size, SpacingH, SpacingW } from '../utils/size';
 import { FontSize } from '../utils/size';
@@ -50,8 +50,12 @@ const Home: React.FC = () => {
                 style={{ marginHorizontal: SpacingW.s1, marginVertical: SpacingH.s1 }}
             />
 
-            <ScrollView>
+            <ScrollView style={{ paddingHorizontal: SpacingW.s1 }}>
                 <HighlightCard dua={duas[9]} />
+
+                <View style={{ flexDirection: 'row', gap: SpacingW.s1, paddingVertical: SpacingH.s1, flexWrap: 'wrap' }}>
+                    {[...new Set(duas.map(d => d.category))].map((c, i) => <Chip key={i} mode='outlined' selected={search === c} onPress={() => setSearch(c)}>{c}</Chip>)}
+                </View>
 
                 <View style={styles.cardContainer}>
                     {duas.filter(d => d.category.includes(search)).map((d, i) => <BigCard key={i} dua={d} />)}
@@ -69,7 +73,7 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     cardContainer: {
-        padding: SpacingH.s1,
+        paddingVertical: SpacingH.s1,
         flexDirection: 'row-reverse',
         justifyContent: 'space-between',
         flexWrap: 'wrap',
