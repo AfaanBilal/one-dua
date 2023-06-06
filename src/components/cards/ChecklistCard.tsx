@@ -34,12 +34,13 @@ const styles = StyleSheet.create({
     card: {
         width: '100%',
         paddingHorizontal: SpacingW.s2,
-        paddingVertical: SpacingH.s2,
+        paddingVertical: SpacingH.s1,
         backgroundColor: Colors.SOFT_WHITE,
         borderRadius: SpacingW.s2,
     },
     duaCard: {
-        padding: SpacingH.s1,
+        paddingHorizontal: SpacingW.s1,
+        paddingVertical: SpacingH.s2,
         marginBottom: SpacingH.s1,
         backgroundColor: Colors.WHITE,
         borderRadius: SpacingW.s1,
@@ -56,7 +57,7 @@ const styles = StyleSheet.create({
         marginBottom: SpacingH.s0,
     },
     text: {
-        fontSize: FontSize.SMALL,
+        fontSize: FontSize.NORMAL,
         color: Colors.DARK,
         textAlign: 'right',
     },

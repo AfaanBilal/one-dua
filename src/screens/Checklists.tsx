@@ -17,6 +17,7 @@ import ChecklistCard from '../components/cards/ChecklistCard';
 
 const checklists: Checklist[] = [
     { id: '1', title: 'Before sleeping', duas: [{ dua: duas[11], rep: 1 }, { dua: duas[3], rep: 33 }, { dua: duas[4], rep: 33 }, { dua: duas[5], rep: 34 },], },
+    { id: '2', title: 'Waking up', duas: [{ dua: duas[4], rep: 3 }, { dua: duas[12], rep: 1 },], },
 ];
 
 const Checklists: React.FC = () => {
@@ -43,5 +44,6 @@ const styles = StyleSheet.create({
     },
     cardContainer: {
         padding: SpacingH.s1,
+        gap: SpacingH.s1,
     },
 });
