@@ -53,12 +53,12 @@ const styles = StyleSheet.create({
     dua: {
         fontSize: FontSize.NORMAL,
         color: Colors.DARK,
-        textAlign: 'right',
+        textAlign: 'center',
         marginBottom: SpacingH.s0,
     },
     text: {
         fontSize: FontSize.NORMAL,
         color: Colors.DARK,
-        textAlign: 'right',
+        textAlign: 'center',
     },
 });
