@@ -37,13 +37,14 @@ const Home: React.FC = () => {
     return (
         <View style={styles.container}>
             <StatusBar style="auto" />
-
             <TitleText style={{ fontSize: FontSize.BIGGER, color: Colors.DARK, textAlign: 'center', marginBottom: SpacingH.s1 }}>One Dua</TitleText>
 
-            <HighlightCard dua={duas[9]} />
+            <ScrollView>
+                <HighlightCard dua={duas[9]} />
 
-            <ScrollView contentContainerStyle={styles.cardContainer}>
-                {duas.map((d, i) => <BigCard key={i} dua={d} />)}
+                <View style={styles.cardContainer}>
+                    {duas.map((d, i) => <BigCard key={i} dua={d} />)}
+                </View>
             </ScrollView>
         </View>
     );
