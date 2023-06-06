@@ -9,6 +9,10 @@ export type WithChildren = {
     children: React.ReactNode;
 };
 
+export type WithFavorites = {
+    favoritesState: [string[], React.Dispatch<React.SetStateAction<string[]>>];
+};
+
 export type Dua = {
     id: string;
     text: string;
