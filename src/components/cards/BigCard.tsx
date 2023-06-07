@@ -6,14 +6,23 @@
  */
 
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { AntDesign } from '@expo/vector-icons';
 import { Colors } from '../../utils/colors';
 import { FontSize, SpacingH, SpacingW } from '../../utils/size';
 import { Dua } from '../../types';
+import { FavoritesContext } from '../../utils/FavoritesContext';
 
 const BigCard: React.FC<{ dua: Dua }> = ({ dua }) => {
+    const { favorites, setFavorites } = React.useContext(FavoritesContext);
+
     return (
         <View style={styles.card}>
+            <View style={styles.topRow}>
+                <TouchableOpacity hitSlop={10} onPress={() => setFavorites(favorites.includes(dua.id) ? favorites.filter(f => f !== dua.id) : [...favorites, dua.id])}>
+                    <AntDesign name={favorites.includes(dua.id) ? "heart" : "hearto"} size={24} color="black" />
+                </TouchableOpacity>
+            </View>
             <Text style={styles.title}>{dua.text}</Text>
             <View style={styles.bottomRow}>
                 <Text style={styles.text}>{dua.category}</Text>
@@ -44,6 +53,11 @@ const styles = StyleSheet.create({
     text: {
         fontSize: FontSize.SMALL,
         color: Colors.DARK,
+    },
+    topRow: {
+        flexDirection: 'row',
+        justifyContent: 'flex-end',
+        paddingHorizontal: SpacingW.s2,
     },
     bottomRow: {
         flexDirection: 'row',

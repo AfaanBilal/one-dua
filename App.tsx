@@ -5,6 +5,7 @@
  * @link   https://afaan.dev
  */
 
+import React from 'react';
 import { useFonts } from 'expo-font';
 import { Fonts } from './src/utils/fonts';
 import { NavigationContainer } from '@react-navigation/native';
@@ -13,8 +14,10 @@ import { PaperProvider } from 'react-native-paper';
 import { expo } from './app.json';
 import BottomTabs from './src/navigation/BottomTabs';
 import { theme } from './src/utils/theme';
+import { FavoritesContext } from './src/utils/FavoritesContext';
 
 export default function App() {
+    const [favorites, setFavorites] = React.useState<string[]>([]);
     const [fontsLoaded] = useFonts({
         [Fonts.SourceSansProLight]: require('./assets/fonts/Source_Sans_Pro/SourceSansPro-Light.ttf'),
         [Fonts.SourceSansPro]: require('./assets/fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf'),
@@ -33,9 +36,11 @@ export default function App() {
 
     return (
         <NavigationContainer>
-            <PaperProvider theme={theme}>
-                <BottomTabs />
-            </PaperProvider>
+            <FavoritesContext.Provider value={{ favorites, setFavorites }}>
+                <PaperProvider theme={theme}>
+                    <BottomTabs />
+                </PaperProvider>
+            </FavoritesContext.Provider>
         </NavigationContainer>
     );
 }

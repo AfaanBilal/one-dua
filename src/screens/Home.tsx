@@ -15,6 +15,7 @@ import HighlightCard from '../components/cards/HighlightCard';
 import { Dua } from '../types';
 import ScreenTitle from '../components/ScreenTitle';
 import { Colors } from '../utils/colors';
+import { FavoritesContext } from '../utils/FavoritesContext';
 
 export const duas: Dua[] = [
     { text: 'بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ', id: '1', ref: 'Quran 1:1', category: 'General', },

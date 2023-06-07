@@ -5,14 +5,18 @@
  * @link   https://afaan.dev
  */
 
+import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { ScrollView, StyleSheet, View } from 'react-native';
 import { Size, SpacingH } from '../utils/size';
 import ScreenTitle from '../components/ScreenTitle';
 import { duas } from './Home';
 import BigCard from '../components/cards/BigCard';
+import { FavoritesContext } from '../utils/FavoritesContext';
 
 const Favorites: React.FC = () => {
+    const { favorites } = React.useContext(FavoritesContext);
+
     return (
         <View style={styles.container}>
             <StatusBar style="auto" />
@@ -21,6 +25,7 @@ const Favorites: React.FC = () => {
             <ScrollView>
                 <View style={styles.cardContainer}>
                     {duas
+                        .filter(d => favorites.includes(d.id))
                         .map((d, i) => <BigCard key={i} dua={d} />)
                     }
                 </View>
