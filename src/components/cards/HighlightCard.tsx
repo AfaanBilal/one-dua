@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
         minHeight: Size.h15,
         paddingHorizontal: SpacingW.s4,
         paddingVertical: SpacingH.s2,
-        backgroundColor: Colors.LIGHT,
+        backgroundColor: Colors.DARK,
         borderRadius: SpacingW.s2,
         justifyContent: 'space-between',
     },
