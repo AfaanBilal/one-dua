@@ -14,6 +14,7 @@ import BigCard from '../components/cards/BigCard';
 import HighlightCard from '../components/cards/HighlightCard';
 import { Dua } from '../types';
 import ScreenTitle from '../components/ScreenTitle';
+import { Colors } from '../utils/colors';
 
 export const duas: Dua[] = [
     { text: 'بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ', id: '1', ref: 'Quran 1:1', category: 'General', },
@@ -48,7 +49,7 @@ const Home: React.FC = () => {
                 placeholder="Search"
                 onChangeText={(s: string) => setSearch(s)}
                 value={search}
-                style={{ marginHorizontal: SpacingW.s1, marginVertical: SpacingH.s1 }}
+                style={{ marginHorizontal: SpacingW.s1, marginVertical: SpacingH.s1, backgroundColor: Colors.SOFT_WHITE }}
             />
 
             <ScrollView style={{ paddingHorizontal: SpacingW.s1 }}>
@@ -69,7 +70,7 @@ const Home: React.FC = () => {
                 <View style={styles.cardContainer}>
                     {duas
                         .filter(d => filter.includes(d.category))
-                        .filter(d => d.category.includes(search))
+                        .filter(d => d.category.toLowerCase().includes(search.toLowerCase()))
                         .map((d, i) => <BigCard key={i} dua={d} />)
                     }
                 </View>
