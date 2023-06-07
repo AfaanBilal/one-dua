@@ -11,10 +11,10 @@ import { ScrollView, StyleSheet, View } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import { Size, SpacingH } from '../utils/size';
 import ScreenTitle from '../components/ScreenTitle';
-import { duas } from './Home';
 import BigCard from '../components/cards/BigCard';
-import { FavoritesContext } from '../utils/FavoritesContext';
 import AltText from '../components/text/AltText';
+import { duas } from './Home';
+import { FavoritesContext } from '../utils/FavoritesContext';
 
 const Favorites: React.FC = () => {
     const { favorites } = React.useContext(FavoritesContext);
@@ -36,7 +36,7 @@ const Favorites: React.FC = () => {
             }
         </View>
     );
-}
+};
 
 export default Favorites;
 

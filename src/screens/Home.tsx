@@ -12,10 +12,9 @@ import { Chip, Searchbar } from 'react-native-paper';
 import { Size, SpacingH, SpacingW } from '../utils/size';
 import BigCard from '../components/cards/BigCard';
 import HighlightCard from '../components/cards/HighlightCard';
-import { Dua } from '../types';
 import ScreenTitle from '../components/ScreenTitle';
+import { Dua } from '../types';
 import { Colors } from '../utils/colors';
-import { FavoritesContext } from '../utils/FavoritesContext';
 
 export const duas: Dua[] = [
     { text: 'بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ', id: '1', ref: 'Quran 1:1', category: 'General', },
@@ -78,7 +77,7 @@ const Home: React.FC = () => {
             </ScrollView>
         </View>
     );
-}
+};
 
 export default Home;
 

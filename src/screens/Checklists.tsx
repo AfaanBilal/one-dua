@@ -31,7 +31,7 @@ const Checklists: React.FC = () => {
             </ScrollView>
         </View>
     );
-}
+};
 
 export default Checklists;
 
