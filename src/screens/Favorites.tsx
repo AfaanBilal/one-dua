@@ -8,28 +8,32 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { ScrollView, StyleSheet, View } from 'react-native';
+import { AntDesign } from '@expo/vector-icons';
 import { Size, SpacingH } from '../utils/size';
 import ScreenTitle from '../components/ScreenTitle';
 import { duas } from './Home';
 import BigCard from '../components/cards/BigCard';
 import { FavoritesContext } from '../utils/FavoritesContext';
+import AltText from '../components/text/AltText';
 
 const Favorites: React.FC = () => {
     const { favorites } = React.useContext(FavoritesContext);
+    const favoriteDuas = duas.filter(d => favorites.includes(d.id));
 
     return (
         <View style={styles.container}>
             <StatusBar style="auto" />
             <ScreenTitle title='Favorites' />
 
-            <ScrollView>
-                <View style={styles.cardContainer}>
-                    {duas
-                        .filter(d => favorites.includes(d.id))
-                        .map((d, i) => <BigCard key={i} dua={d} />)
-                    }
-                </View>
-            </ScrollView>
+            {favoriteDuas.length ?
+                <ScrollView>
+                    <View style={styles.cardContainer}>
+                        {favoriteDuas.map((d, i) => <BigCard key={i} dua={d} />)}
+                    </View>
+                </ScrollView>
+                :
+                <View style={styles.noFavorites}><AltText style={styles.noFavoriteText}>Tap the <AntDesign name="hearto" size={14} color="black" /> to add a favorite.</AltText></View>
+            }
         </View>
     );
 }
@@ -44,5 +48,13 @@ const styles = StyleSheet.create({
     cardContainer: {
         padding: SpacingH.s1,
         gap: SpacingH.s1,
+    },
+    noFavorites: {
+        flex: 1,
+        justifyContent: 'center',
+        alignContent: 'center',
+    },
+    noFavoriteText: {
+        textAlign: 'center'
     },
 });
