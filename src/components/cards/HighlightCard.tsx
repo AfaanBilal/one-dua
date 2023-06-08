@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
         color: Colors.SOFT_WHITE,
         textAlign: 'center',
         fontWeight: 'bold',
-        paddingBottom: SpacingH.s2,
+        paddingBottom: SpacingH.s4,
     },
     text: {
         fontSize: FontSize.SMALL,
