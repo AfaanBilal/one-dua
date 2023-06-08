@@ -9,9 +9,9 @@ Author: **[Afaan Bilal](https://afaan.dev)**
 ---
 
 ## Screenshots
-||||
-|:----:|:----------:|:---------:|
+
 |![Home](/screenshots/OneDua-Home.png)|![Checklists](/screenshots/OneDua-Checklists.png)|![Favorites](/screenshots/OneDua-Favorites.png)|
+|:-:|:-:|:-:|
 
 ---
 
