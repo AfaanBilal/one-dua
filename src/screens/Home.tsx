@@ -36,6 +36,8 @@ export const duas: Dua[] = [
 
 const categoryList = [...new Set(duas.map(d => d.category))];
 
+const highlighted = duas[Math.floor(Math.random() * duas.length)];
+
 const Home: React.FC = () => {
     const [search, setSearch] = React.useState('');
     const [filter, setFilter] = React.useState<string[]>([...categoryList]);
@@ -53,7 +55,7 @@ const Home: React.FC = () => {
             />
 
             <ScrollView style={{ paddingHorizontal: SpacingW.s1 }}>
-                <HighlightCard dua={duas[9]} />
+                <HighlightCard dua={highlighted} />
 
                 <View style={{ flexDirection: 'row', gap: SpacingW.s1, paddingVertical: SpacingH.s1, flexWrap: 'wrap' }}>
                     {categoryList.map((c, i) =>
