@@ -14,7 +14,7 @@ import { PaperProvider } from 'react-native-paper';
 import { expo } from './app.json';
 import BottomTabs from './src/navigation/BottomTabs';
 import { theme } from './src/utils/theme';
-import { FavoritesContext } from './src/utils/FavoritesContext';
+import { FavoritesContext, loadFavorites, saveFavorites } from './src/utils/FavoritesContext';
 
 export default function App() {
     const [favorites, setFavorites] = React.useState<string[]>([]);
@@ -30,13 +30,19 @@ export default function App() {
         [Fonts.UbuntuBold]: require('./assets/fonts/Ubuntu/Ubuntu-Bold.ttf'),
     });
 
+    React.useEffect(() => { (async () => { setFavorites(await loadFavorites()); })(); }, []);
+    const setFavoritesPersisted = (favorites: string[]) => {
+        setFavorites(favorites);
+        (async () => { await saveFavorites(favorites); })();
+    };
+
     if (!fontsLoaded) {
         return null;
     }
 
     return (
         <NavigationContainer>
-            <FavoritesContext.Provider value={{ favorites, setFavorites }}>
+            <FavoritesContext.Provider value={{ favorites, setFavorites: setFavoritesPersisted }}>
                 <PaperProvider theme={theme}>
                     <BottomTabs />
                 </PaperProvider>
