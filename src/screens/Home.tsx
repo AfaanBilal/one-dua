@@ -33,6 +33,7 @@ export const duas: Dua[] = [
     { text: 'إِنَّا ِلِلَّٰهِ وَإِنَّا إِلَيْهِ رَاجِعُونَ', id: '14', ref: '', category: 'Bad news' },
     { text: 'اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْخُبُثِ وَالْخَبَائِثِ', id: '15', ref: '', category: 'Washroom' },
     { text: 'غُفْرَانَكَ الْحَمْدُ لِلَّهِ الَّذِي أَذْهَبَ عَنِّي الْأَذٰى وَعَافَانِي', id: '16', ref: '', category: 'Washroom' },
+    { text: 'بِسْمِ اللَّهِ تَوَكَّلْـتُ عَلَى اللَّهِ، وَلاَ حَوْلَ وَلاَ قُـوَّةَ إِلاَّ بِاللَّهِ', id: '17', ref: '', category: 'General' },
 ];
 
 const categoryList = [...new Set(duas.map(d => d.category))];
