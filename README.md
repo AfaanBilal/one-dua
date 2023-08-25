@@ -10,7 +10,7 @@ Author: **[Afaan Bilal](https://afaan.dev)**
 
 ## Screenshots
 
-|![Home](/screenshots/OneDua-Home.png)|![Checklists](/screenshots/OneDua-Checklists.png)|![Favorites](/screenshots/OneDua-Favorites.png)|
+|![Home](/screenshots/OneDua-Home.webp)|![Checklists](/screenshots/OneDua-Checklists.webp)|![Favorites](/screenshots/OneDua-Favorites.webp)|
 |:-:|:-:|:-:|
 
 ---
