@@ -10,6 +10,8 @@ Author: **[Afaan Bilal](https://afaan.dev)**
 
 ## Screenshots
 
+![One Dua](/screenshots/one-dua.png)
+
 |![Home](/screenshots/OneDua-Home.webp)|![Checklists](/screenshots/OneDua-Checklists.webp)|![Favorites](/screenshots/OneDua-Favorites.webp)|
 |:-:|:-:|:-:|
 
