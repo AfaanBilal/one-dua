@@ -8,7 +8,7 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { ScrollView, StyleSheet, View } from 'react-native';
-import { AntDesign } from '@expo/vector-icons';
+import { AntDesign, Entypo } from '@expo/vector-icons';
 import { Size, SpacingH } from '../utils/size';
 import ScreenTitle from '../components/ScreenTitle';
 import BigCard from '../components/cards/BigCard';
@@ -32,7 +32,7 @@ const Favorites: React.FC = () => {
                     </View>
                 </ScrollView>
                 :
-                <View style={styles.noFavorites}><AltText style={styles.noFavoriteText}>Tap the <AntDesign name="hearto" size={14} color="black" /> to add a favorite.</AltText></View>
+                <View style={styles.noFavorites}><AltText style={styles.noFavoriteText}>Tap the <Entypo name="heart-outlined" size={14} color="black" /> to add a favorite.</AltText></View>
             }
         </View>
     );

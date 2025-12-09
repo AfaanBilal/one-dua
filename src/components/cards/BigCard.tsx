@@ -7,7 +7,7 @@
 
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { AntDesign } from '@expo/vector-icons';
+import { Entypo } from '@expo/vector-icons';
 import { Colors } from '../../utils/colors';
 import { FontSize, SpacingH, SpacingW } from '../../utils/size';
 import { Dua } from '../../types';
@@ -20,7 +20,7 @@ const BigCard: React.FC<{ dua: Dua }> = ({ dua }) => {
         <View style={styles.card}>
             <View style={styles.topRow}>
                 <TouchableOpacity hitSlop={10} onPress={() => setFavorites(favorites.includes(dua.id) ? favorites.filter(f => f !== dua.id) : [...favorites, dua.id])}>
-                    <AntDesign name={favorites.includes(dua.id) ? "heart" : "hearto"} size={24} color="black" />
+                    <Entypo name={favorites.includes(dua.id) ? "heart" : "heart-outlined"} size={24} color="black" />
                 </TouchableOpacity>
             </View>
             <Text style={styles.title}>{dua.text}</Text>
