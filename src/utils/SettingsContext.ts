@@ -14,6 +14,7 @@ export type Settings = {
     showMeaning: boolean;
     fontSizeScale: number;
     onboardingDone: boolean;
+    showHomeFilters: boolean;
 };
 
 export const defaultSettings: Settings = {
@@ -22,6 +23,7 @@ export const defaultSettings: Settings = {
     showMeaning: true,
     fontSizeScale: 1,
     onboardingDone: false,
+    showHomeFilters: true,
 };
 
 export const SettingsContext = React.createContext<{
