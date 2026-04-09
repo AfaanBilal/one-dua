@@ -113,6 +113,16 @@ const Settings: React.FC = () => {
 
                 <Divider style={styles.divider} />
 
+                <SettingRow label="Show Home Filters">
+                    <Switch
+                        value={settings.showHomeFilters}
+                        onValueChange={(v) => updateSettings({ showHomeFilters: v })}
+                        color={colors.LIGHT}
+                    />
+                </SettingRow>
+
+                <Divider style={styles.divider} />
+
                 <AltText style={[styles.sectionTitle, { color: colors.MEDIUM }]}>Data</AltText>
 
                 <Button

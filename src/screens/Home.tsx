@@ -45,24 +45,26 @@ const Home: React.FC = () => {
         <View style={{ paddingHorizontal: SpacingW.s1 }}>
             <HighlightCard dua={highlighted} />
 
-            <View style={styles.chipContainer}>
-                <Chip
-                    mode='flat'
-                    selected={allSelected}
-                    onPress={() => setFilter(allSelected ? [] : [...categoryList])}
-                    style={{ backgroundColor: allSelected ? colors.LIGHT : colors.SOFT_WHITE }}>
-                    {allSelected ? 'Deselect All' : 'Select All'}
-                </Chip>
-                {categoryList.map((c, i) =>
+            {settings.showHomeFilters && (
+                <View style={styles.chipContainer}>
                     <Chip
-                        key={i}
-                        mode='outlined'
-                        selected={filter.includes(c)}
-                        onPress={() => setFilter(filter.includes(c) ? filter.filter(f => f !== c) : [...filter, c])}>
-                        {c}
+                        mode='flat'
+                        selected={allSelected}
+                        onPress={() => setFilter(allSelected ? [] : [...categoryList])}
+                        style={{ backgroundColor: allSelected ? colors.LIGHT : colors.SOFT_WHITE }}>
+                        {allSelected ? 'Deselect All' : 'Select All'}
                     </Chip>
-                )}
-            </View>
+                    {categoryList.map((c, i) =>
+                        <Chip
+                            key={i}
+                            mode='outlined'
+                            selected={filter.includes(c)}
+                            onPress={() => setFilter(filter.includes(c) ? filter.filter(f => f !== c) : [...filter, c])}>
+                            {c}
+                        </Chip>
+                    )}
+                </View>
+            )}
         </View>
     );
 

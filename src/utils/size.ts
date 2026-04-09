@@ -87,7 +87,7 @@ export const Size = {
     h10: hp('10%') * hMulFactor,
     h5: hp('5%') * hMulFactor,
 
-    adjustedStatusBarHeight: Platform.OS == 'ios' ? Constants.statusBarHeight : 0,
+    adjustedStatusBarHeight: Constants.statusBarHeight,
 };
 
 export const keyboardAvoidOffset = Size.adjustedStatusBarHeight + (Platform.OS == 'ios' ? hp('12%') : .1 * Size.adjustedStatusBarHeight);
