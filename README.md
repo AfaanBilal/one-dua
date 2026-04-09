@@ -3,8 +3,25 @@ OneDua
 
 Author: **[Afaan Bilal](https://afaan.dev)**
 
+[![Google Play](https://img.shields.io/badge/Google%20Play-Download-green?logo=google-play)](https://play.google.com/store/apps/details?id=dev.afaan.onedua)
+
 ## Introduction
-**OneDua** is a quick list of Duas at your fingertips. Built with React Native using Expo.
+**OneDua** is your daily dua companion — a beautiful collection of essential Islamic duas at your fingertips. Built with React Native using Expo.
+
+[Get it on Google Play](https://play.google.com/store/apps/details?id=dev.afaan.onedua)
+
+## Features
+
+- 50+ duas across categories like forgiveness, protection, travel, eating, sleeping, and more
+- Dua of the Day to inspire your daily remembrance
+- Search across Arabic text, transliteration, meaning, and references
+- Favorites to keep your most-used duas close at hand
+- Checklists for daily routines with built-in tasbih counters
+- Dark mode for comfortable reading at night
+- Adjustable font size
+- Transliteration and meaning toggles
+- Copy and share any dua
+- Fully offline — no internet required
 
 ---
 
