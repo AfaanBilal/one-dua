@@ -9,7 +9,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#092327"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -20,7 +20,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#092327"
       }
     },
     "web": {
@@ -30,6 +30,7 @@
       "eas": {
         "projectId": "22e09e18-808c-40a5-9b0f-54969088ee2f"
       }
-    }
+    },
+    "owner": "afaan"
   }
 }

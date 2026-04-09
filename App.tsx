@@ -10,7 +10,7 @@ import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import { Fonts } from './src/utils/fonts';
 import { NavigationContainer } from '@react-navigation/native';
-import { AppRegistry, View } from 'react-native';
+import { AppRegistry, Image, StyleSheet, View } from 'react-native';
 import { PaperProvider } from 'react-native-paper';
 import { expo } from './app.json';
 import BottomTabs from './src/navigation/BottomTabs';
@@ -72,7 +72,11 @@ export default function App() {
     };
 
     if (!fontsLoaded || isLoading) {
-        return <View style={{ flex: 1, backgroundColor: '#092327' }} />;
+        return (
+            <View style={splashStyles.container}>
+                <Image source={require('./assets/splash.png')} style={splashStyles.image} resizeMode="contain" />
+            </View>
+        );
     }
 
     if (!settings.onboardingDone) {
@@ -91,5 +95,18 @@ export default function App() {
         </NavigationContainer>
     );
 }
+
+const splashStyles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#092327',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    image: {
+        width: '80%',
+        height: '80%',
+    },
+});
 
 AppRegistry.registerComponent(expo.name, () => App);
