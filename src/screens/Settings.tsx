@@ -132,7 +132,7 @@ const Settings: React.FC = () => {
                 </Button>
 
                 <View style={styles.footer}>
-                    <AltText style={[styles.footerText, { color: colors.MEDIUM }]}>OneDua v1.0.0</AltText>
+                    <AltText style={[styles.footerText, { color: colors.MEDIUM }]}>OneDua v2.0.0</AltText>
                     <TouchableOpacity onPress={() => Linking.openURL('https://afaan.dev')}>
                         <AltText style={[styles.footerText, { color: colors.LIGHT, textDecorationLine: 'underline' }]}>
                             afaan.dev

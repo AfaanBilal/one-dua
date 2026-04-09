@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "one-dua",
+    "name": "OneDua",
     "slug": "one-dua",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -15,13 +15,17 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "dev.afaan.onedua",
+      "buildNumber": "1"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#092327"
-      }
+      },
+      "package": "dev.afaan.onedua",
+      "versionCode": 1
     },
     "web": {
       "favicon": "./assets/favicon.png"
