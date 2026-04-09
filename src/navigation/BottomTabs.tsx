@@ -8,11 +8,14 @@
 import React from 'react';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import { Colors } from '../utils/colors';
+import { useThemeColors } from '../utils/colors';
 import { SpacingH } from '../utils/size';
+import { FavoritesContext } from '../utils/FavoritesContext';
+import { SettingsContext } from '../utils/SettingsContext';
 import Home from '../screens/Home';
 import Checklists from '../screens/Checklists';
 import Favorites from '../screens/Favorites';
+import Settings from '../screens/Settings';
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -21,14 +24,26 @@ const TabIcon = ({ name, color, focused }: { name: string; color: string; focuse
 };
 
 const BottomTabs: React.FC = () => {
+    const colors = useThemeColors();
+    const { settings } = React.useContext(SettingsContext);
+    const { favorites } = React.useContext(FavoritesContext);
+
     return (
         <Tab.Navigator
             initialRouteName="Home"
             shifting={true}
-            barStyle={{ backgroundColor: Colors.SOFT_WHITE, marginBottom: -SpacingH.s2 }}>
+            barStyle={{ backgroundColor: settings.darkMode ? colors.SOFT_WHITE : '#F9F9F9', marginBottom: -SpacingH.s2 }}>
             <Tab.Screen name="Home" component={Home} options={{ tabBarIcon: ({ color, focused }) => <TabIcon name="home" color={color} focused={focused} /> }} />
             <Tab.Screen name="Checklists" component={Checklists} options={{ tabBarIcon: ({ color, focused }) => <TabIcon name="check-circle" color={color} focused={focused} /> }} />
-            <Tab.Screen name="Favorites" component={Favorites} options={{ tabBarIcon: ({ color, focused }) => <TabIcon name="heart" color={color} focused={focused} /> }} />
+            <Tab.Screen
+                name="Favorites"
+                component={Favorites}
+                options={{
+                    tabBarIcon: ({ color, focused }) => <TabIcon name="heart" color={color} focused={focused} />,
+                    tabBarBadge: favorites.length > 0 ? favorites.length : undefined,
+                }}
+            />
+            <Tab.Screen name="Settings" component={Settings} options={{ tabBarIcon: ({ color, focused }) => <TabIcon name="cog" color={color} focused={focused} /> }} />
         </Tab.Navigator>
     );
 };

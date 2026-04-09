@@ -11,8 +11,18 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 export const FavoritesContext = React.createContext<{ favorites: string[], setFavorites: (favorites: string[]) => void }>({ favorites: [], setFavorites: () => { } });
 
 export const loadFavorites = async () => {
-    const value = await AsyncStorage.getItem('favorites');
-    return value !== null ? JSON.parse(value) : [];
+    try {
+        const value = await AsyncStorage.getItem('favorites');
+        return value !== null ? JSON.parse(value) : [];
+    } catch {
+        return [];
+    }
 };
 
-export const saveFavorites = async (favorites: string[]) => await AsyncStorage.setItem('favorites', JSON.stringify(favorites));
+export const saveFavorites = async (favorites: string[]) => {
+    try {
+        await AsyncStorage.setItem('favorites', JSON.stringify(favorites));
+    } catch (e) {
+        console.error('Failed to persist favorites', e);
+    }
+};

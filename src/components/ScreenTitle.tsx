@@ -6,7 +6,7 @@
  */
 
 import { StyleSheet, View } from 'react-native';
-import { Colors } from '../utils/colors';
+import { useThemeColors } from '../utils/colors';
 import { SpacingH } from '../utils/size';
 import { FontSize } from '../utils/size';
 import TitleText from '../components/text/TitleText';
@@ -17,10 +17,12 @@ type ScreenTitleProps = {
 };
 
 const ScreenTitle: React.FC<ScreenTitleProps> = ({ title }) => {
+    const colors = useThemeColors();
+
     return (
         <View style={styles.container}>
-            <TitleText style={styles.appName}>OneDua</TitleText>
-            <AltText style={styles.title}>{title}</AltText>
+            <TitleText style={[styles.appName, { color: colors.DARK }]}>OneDua</TitleText>
+            <AltText style={[styles.title, { color: colors.DARK }]}>{title}</AltText>
         </View>
     );
 }
@@ -37,12 +39,10 @@ const styles = StyleSheet.create({
     },
     appName: {
         fontSize: FontSize.BIG,
-        color: Colors.DARK,
         textAlign: 'center'
     },
     title: {
         fontSize: FontSize.MEDIUM,
-        color: Colors.DARK,
         textAlign: 'center',
     },
 });
